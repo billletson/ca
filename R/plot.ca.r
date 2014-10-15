@@ -48,6 +48,7 @@ plot.ca <- function(x,
 					xlab    = "_auto_",
 					ylab    = "_auto_",
 					col.lab = c("blue", "red"),  # col.lab = "black" gives the previous default
+                    cex.lab = 0.75,
 					...)
 {
   obj <- x
@@ -285,9 +286,9 @@ plot.ca <- function(x,
         }
     }
   if (labels[1] > 0) {
-    xoff1 <- .5 * strwidth(x.names, cex = .75) + .5 * strwidth("o", cex = .75)
-    xoff2 <- .5 * strheight(x.names, cex = .75) + .5 * strheight("o", cex = .75)
-	text(x[,1] + xoff1, x[,2] + xoff2, x.names, cex = 0.75, xpd = TRUE, col=col.lab[1])
+    xoff1 <- .5 * strwidth(x.names, cex = cex.lab) + .5 * strwidth("o", cex = cex.lab)
+    xoff2 <- .5 * strheight(x.names, cex = cex.lab) + .5 * strheight("o", cex = cex.lab)
+	text(x[,1] + xoff1, x[,2] + xoff2, x.names, cex = cex.lab, xpd = TRUE, col=col.lab[1])
 }
 
  # columns
@@ -300,10 +301,10 @@ plot.ca <- function(x,
         }
     }
   if (labels[2] > 0) {
-    yoff1 <- .5 * strwidth(y.names, cex = 0.75) + .5 * strwidth("o", cex = .75)
-    yoff2 <- .5 * strheight(y.names, cex = 0.75) + .5 * 
+    yoff1 <- .5 * strwidth(y.names, cex = cex.lab) + .5 * strwidth("o", cex = cex.lab)
+    yoff2 <- .5 * strheight(y.names, cex = cex.lab) + .5 * 
              strheight("o", cex = .75)
-	text(y[,1] + yoff1, y[,2] + yoff2, y.names, cex = 0.75, xpd = TRUE, col=col.lab[2])
+	text(y[,1] + yoff1, y[,2] + yoff2, y.names, cex = cex.lab, xpd = TRUE, col=col.lab[2])
 }
 
 # plot connecting lines (sorted by X value)
